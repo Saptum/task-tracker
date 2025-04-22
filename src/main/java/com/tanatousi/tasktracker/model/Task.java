@@ -18,7 +18,8 @@ public class Task {
     @JoinColumn(name = "category_id" , nullable = false)
     private TaskCategory category;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn(name = "priority_id" , nullable = false)
     private TaskPriority priority;
 
     @ManyToOne
