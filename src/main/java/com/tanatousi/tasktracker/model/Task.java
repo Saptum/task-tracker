@@ -14,7 +14,8 @@ public class Task {
 
     private String description;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn(name = "category_id" , nullable = false)
     private TaskCategory category;
 
     @Enumerated(EnumType.STRING)

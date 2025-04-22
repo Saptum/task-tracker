@@ -1,5 +1,22 @@
-package com.tanatousi.tasktracker.model;
+    package com.tanatousi.tasktracker.model;
 
-public enum TaskCategory {
-    WORK, STUDY, HOME
+    import jakarta.persistence.*;
+
+    import java.util.List;
+
+
+    @Entity
+    public class TaskCategory {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    private String name;
+
+    @OneToMany(mappedBy = "category")
+    private List<Task> tasks;
+
+
+
 }
